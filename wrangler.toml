@@ -1,5 +1,6 @@
 name = "morning-forest-a971"
 compatibility_date = "2024-04-01"
+account_id = "8a1192ae4abba98088c67310ad571190"
 
 [assets]
 directory = "."
