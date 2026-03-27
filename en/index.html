@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Host Help — The complete AI team for your short-term rental</title>
+  <meta name="description" content="Host Help is the complete AI team for short-term rentals: 24/7 guest agent, maintenance, pre/post stay communications, social media, electronic invoicing and tax compliance. Up and running in 5 minutes." />
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://host-help.com/en/" />
+  <meta property="og:title" content="Host Help — The complete AI team for short-term rentals" />
+  <meta property="og:description" content="Handle guests, manage maintenance, send communications, post on social media, issue invoices and stay tax-compliant. All automated, all in one place." />
+  <meta property="og:image" content="https://host-help.com/Branding/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Host Help" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Host Help — The complete AI team for short-term rentals" />
+  <meta name="twitter:description" content="Handle guests, manage maintenance, send communications, post on social media, issue invoices and stay tax-compliant. All automated." />
+  <meta name="twitter:image" content="https://host-help.com/Branding/logo.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://host-help.com/en/" />
+  <link rel="alternate" hreflang="es" href="https://host-help.com/" />
+  <link rel="alternate" hreflang="en" href="https://host-help.com/en/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../Branding/logo.png" />
+  <link rel="apple-touch-icon" href="../Branding/logo.png" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Host Help",
+    "url": "https://host-help.com",
+    "logo": "https://host-help.com/Branding/logo.png",
+    "description": "The complete AI team for short-term rentals. 7 modules: 24/7 guest agent, maintenance management, pre/post stay communications, social media marketing, property showcase, regulatory compliance and electronic invoicing.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Basic Plan",
+        "price": "49",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Professional Plan",
+        "price": "99",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      }
+    ],
+    "creator": {
+      "@type": "Organization",
+      "name": "DeHyl",
+      "url": "https://dehyl.ca"
+    },
+    "inLanguage": "en",
+    "availableOnDevice": "Desktop, Mobile",
+    "featureList": [
+      "24/7 guest agent",
+      "Maintenance management",
+      "Pre and post stay communications",
+      "Social media marketing",
+      "Property Showcase",
+      "Regulatory compliance",
+      "Electronic invoicing and tax compliance"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0F0F14;
+      --ink-2:     #1C1C26;
+      --ink-3:     #2A2A38;
+      --blue:      #3B82F6;
+      --blue-dark: #2563EB;
+      --blue-glow: rgba(59,130,246,0.15);
+      --gray-1:    #F8F9FA;
+      --gray-2:    #E9ECEF;
+      --gray-3:    #ADB5BD;
+      --gray-4:    #6C757D;
+      --white:     #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-2);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-logo-text { font-size: 1.05rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+    .nav-logo-text span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-4); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .lang-switch {
+      font-size: 0.8rem; font-weight: 600; color: var(--gray-4);
+      text-decoration: none; border: 1px solid var(--gray-2);
+      padding: 5px 10px; border-radius: 6px; transition: color 0.15s, border-color 0.15s;
+    }
+    .lang-switch:hover { color: var(--ink); border-color: var(--gray-3); }
+    .nav-cta {
+      background: var(--ink); color: var(--white);
+      font-family: inherit; font-size: 0.875rem; font-weight: 600;
+      padding: 10px 20px; border-radius: 8px; text-decoration: none;
+      border: none; cursor: pointer; transition: background 0.15s, transform 0.1s;
+    }
+    .nav-cta:hover { background: var(--ink-2); transform: translateY(-1px); }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--ink); color: var(--white);
+      padding: 100px 24px 120px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(59,130,246,0.08) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.35);
+      color: #93C5FD; border-radius: 999px; padding: 5px 14px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; background: #3B82F6; border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 900;
+      letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 20px;
+    }
+    .hero h1 .accent { color: var(--blue); }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: #94A3B8;
+      line-height: 1.7; max-width: 560px; margin: 0 auto 36px; font-weight: 400;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: var(--white); font-family: inherit;
+      font-size: 0.95rem; font-weight: 700; padding: 14px 28px; border-radius: 10px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.35); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); color: var(--white); font-family: inherit;
+      font-size: 0.95rem; font-weight: 600; padding: 14px 28px; border-radius: 10px;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.15); cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+
+    /* ── Proof strip ── */
+    .proof-strip { background: var(--gray-1); border-bottom: 1px solid var(--gray-2); padding: 18px 24px; text-align: center; }
+    .proof-strip p { font-size: 0.82rem; color: var(--gray-4); font-weight: 500; letter-spacing: 0.04em; }
+    .proof-strip strong { color: var(--ink); }
+
+    /* ── Section base ── */
+    .section { max-width: 1040px; margin: 0 auto; padding: 80px 24px; }
+    .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .section h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 14px; }
+    .section-sub { font-size: 1rem; color: var(--gray-4); line-height: 1.7; max-width: 560px; margin-bottom: 48px; }
+
+    /* ── How it works ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 720px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card {
+      position: relative; padding: 32px 28px; border-radius: 16px;
+      border: 1px solid var(--gray-2); background: var(--white);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .step-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .step-number {
+      width: 40px; height: 40px; background: var(--ink); color: var(--white);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; font-weight: 800; margin-bottom: 18px;
+    }
+    .step-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .step-card p { font-size: 0.875rem; color: var(--gray-4); line-height: 1.65; }
+    .step-connector { position: absolute; right: -13px; top: 52px; width: 26px; height: 2px; background: var(--gray-2); z-index: 1; }
+    @media (max-width: 720px) { .step-connector { display: none; } }
+
+    /* ── Features ── */
+    .features-bg { background: var(--ink); }
+    .features-section { max-width: 1040px; margin: 0 auto; padding: 80px 24px; color: var(--white); }
+    .features-section .section-tag { color: #60A5FA; }
+    .features-section h2 { color: var(--white); }
+    .features-section .section-sub { color: #94A3B8; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .feature-card { background: var(--ink-2); border: 1px solid var(--ink-3); border-radius: 16px; padding: 28px; transition: border-color 0.2s, box-shadow 0.2s; }
+    .feature-card:hover { border-color: rgba(59,130,246,0.4); box-shadow: 0 0 0 1px rgba(59,130,246,0.15); }
+    .feature-icon { width: 44px; height: 44px; background: var(--blue-glow); border: 1px solid rgba(59,130,246,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .feature-icon svg { width: 22px; height: 22px; stroke: #60A5FA; fill: none; stroke-width: 1.8; }
+    .feature-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .feature-card p { font-size: 0.83rem; color: #94A3B8; line-height: 1.65; }
+
+    /* ── Testimonial ── */
+    .testimonial-section { max-width: 760px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+    .quote-mark { font-size: 4rem; line-height: 1; color: var(--blue); font-weight: 900; margin-bottom: 16px; opacity: 0.4; }
+    .testimonial-text { font-size: clamp(1.1rem, 2.2vw, 1.4rem); font-weight: 500; color: var(--ink); line-height: 1.65; letter-spacing: -0.01em; margin-bottom: 28px; }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; justify-content: center; }
+    .author-avatar { width: 48px; height: 48px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .author-name { font-size: 0.9rem; font-weight: 700; color: var(--ink); }
+    .author-role { font-size: 0.78rem; color: var(--gray-4); margin-top: 2px; }
+
+    /* ── Pricing ── */
+    .pricing-bg { background: var(--gray-1); border-top: 1px solid var(--gray-2); border-bottom: 1px solid var(--gray-2); }
+    .pricing-section { max-width: 1040px; margin: 0 auto; padding: 80px 24px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+    .pricing-card { background: var(--white); border: 1px solid var(--gray-2); border-radius: 20px; padding: 32px; position: relative; transition: box-shadow 0.2s; }
+    .pricing-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+    .pricing-card.featured { border-color: var(--blue); border-width: 2px; }
+    .pricing-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--blue); color: var(--white); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
+    .pricing-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-4); margin-bottom: 8px; }
+    .pricing-price { font-size: 2.4rem; font-weight: 900; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
+    .pricing-price sup { font-size: 1.1rem; vertical-align: top; margin-top: 6px; }
+    .pricing-price sub { font-size: 0.85rem; font-weight: 500; color: var(--gray-4); }
+    .pricing-desc { font-size: 0.83rem; color: var(--gray-4); margin: 12px 0 24px; line-height: 1.6; }
+    .pricing-cta { display: block; width: 100%; text-align: center; padding: 12px; border-radius: 10px; font-family: inherit; font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+    .pricing-cta-primary { background: var(--blue); color: var(--white); border: none; }
+    .pricing-cta-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .pricing-cta-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--gray-2); }
+    .pricing-cta-outline:hover { background: var(--gray-1); }
+    .pricing-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .pricing-feat { display: flex; align-items: center; gap: 10px; font-size: 0.83rem; color: var(--gray-4); }
+    .check { width: 18px; height: 18px; flex-shrink: 0; background: var(--blue-glow); border: 1px solid rgba(59,130,246,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .check svg { width: 10px; height: 10px; stroke: var(--blue); fill: none; stroke-width: 2.5; }
+
+    /* ── CTA banner ── */
+    .cta-banner { background: var(--ink); color: var(--white); text-align: center; padding: 80px 24px; }
+    .cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .cta-banner h2 .accent { color: var(--blue); }
+    .cta-banner p { color: #94A3B8; margin-bottom: 32px; font-size: 1rem; }
+    .cta-sub-note { margin-top: 16px; font-size: 0.78rem; color: #475569; }
+
+    /* ── Footer ── */
+    footer { background: var(--ink-2); border-top: 1px solid var(--ink-3); padding: 40px 24px 28px; }
+    .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }
+    .footer-brand-name { font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: #64748B; text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: #94A3B8; }
+    .footer-bottom { max-width: 1040px; margin: 24px auto 0; padding-top: 20px; border-top: 1px solid var(--ink-3); font-size: 0.75rem; color: #334155; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    /* ── Chat demo widget ── */
+    .demo-widget { display: inline-flex; flex-direction: column; background: var(--white); border: 1px solid var(--gray-2); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12); width: 320px; max-width: 100%; margin: 48px auto 0; text-align: left; }
+    .demo-header { background: var(--ink); padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
+    .demo-avatar { width: 36px; height: 36px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .demo-avatar img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+    .demo-name { font-size: 0.88rem; font-weight: 700; color: var(--white); }
+    .demo-status { font-size: 0.7rem; color: #60A5FA; margin-top: 1px; }
+    .demo-messages { padding: 16px; display: flex; flex-direction: column; gap: 10px; background: #F8FAFC; }
+    .demo-msg { max-width: 85%; border-radius: 14px; padding: 10px 13px; font-size: 0.83rem; line-height: 1.55; }
+    .demo-msg.bot { background: var(--white); color: var(--ink); border: 1px solid var(--gray-2); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .demo-msg.user { background: var(--blue); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+    .demo-footer { border-top: 1px solid var(--gray-2); padding: 10px 14px; display: flex; align-items: center; gap: 8px; background: var(--white); }
+    .demo-input { flex: 1; font-size: 0.8rem; color: var(--gray-4); font-family: inherit; }
+    .demo-send { width: 32px; height: 32px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .demo-send svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 2; }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--gray-2); }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <a href="/en/" class="nav-logo">
+    <img src="../Branding/logo.png" alt="Host Help" />
+    <span class="nav-logo-text">Host<span>-Help</span>.com</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/" class="lang-switch">ES</a>
+    <a href="https://app.host-help.com/onboarding" class="nav-cta">Get started free</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <img src="../Branding/logo.png" alt="Host Help" style="height:135px;width:auto;margin:0 auto 28px;display:block;filter:brightness(0) invert(1);" />
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      7 modules · The complete team
+    </div>
+    <h1>Your complete AI team<br><span class="accent">for short-term rentals</span></h1>
+    <p>Host Help is not a chatbot — it is the complete team for your short-term rental property. Handle guests, manage maintenance, send communications, post on social media, issue invoices and stay tax-compliant. All automated, all in one place.</p>
+    <div class="hero-btns">
+      <a href="https://app.host-help.com/onboarding" class="btn-primary">Set up my property</a>
+      <a href="#how-it-works" class="btn-ghost">See how it works</a>
+    </div>
+    <div style="margin-top:16px;">
+      <a href="https://www.sancibrian.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:#60A5FA;font-size:0.85rem;font-weight:600;text-decoration:none;border:1px solid rgba(96,165,250,0.3);border-radius:999px;padding:7px 18px;transition:background 0.15s;" onmouseover="this.style.background='rgba(96,165,250,0.1)'" onmouseout="this.style.background='transparent'">
+        ✈️ Talk to Captain DD
+      </a>
+    </div>
+
+    <!-- Demo chat widget -->
+    <div class="demo-widget">
+      <div class="demo-header">
+        <div class="demo-avatar">
+          <img src="../Branding/logo.png" alt="" />
+        </div>
+        <div>
+          <div class="demo-name">Your assistant</div>
+          <div class="demo-status">Online</div>
+        </div>
+      </div>
+      <div class="demo-messages">
+        <div class="demo-msg bot">Hi, welcome! I can help you with rates, availability and everything you need to know about the property.</div>
+        <div class="demo-msg user">How many guests does it fit?</div>
+        <div class="demo-msg bot">The property fits up to 8 guests, 3 bedrooms and 2 bathrooms. Would you like to know the rates?</div>
+      </div>
+      <div class="demo-footer">
+        <span class="demo-input">Type your question...</span>
+        <div class="demo-send">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Proof strip ── -->
+<div class="proof-strip">
+  <p>Currently serving <strong>Cabana Sancibrian</strong> in Sapzurro, Colombia &mdash; answering guests from day one</p>
+</div>
+
+<!-- ── How it works ── -->
+<section class="section" id="how-it-works">
+  <span class="section-tag">How it works</span>
+  <h2>Up and running in 5 minutes</h2>
+  <p class="section-sub">No technical knowledge required. Just describe your property and the team starts working for you.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-connector"></div>
+      <div class="step-number">1</div>
+      <h3>Set up your property</h3>
+      <p>Enter the basics: name, location, capacity, check-in/out times and rates. The whole team learns about your property from the start.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-connector"></div>
+      <div class="step-number">2</div>
+      <h3>Customize your agent</h3>
+      <p>Give your main agent a name and personality. Choose a tone that best represents your property — formal, friendly, or local.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <h3>Share the link</h3>
+      <p>Your property gets its own URL. Drop it on Airbnb, WhatsApp, social media — wherever your guests are.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── Features ── -->
+<div class="features-bg">
+  <div class="features-section" id="features">
+    <span class="section-tag">The 7 modules</span>
+    <h2>The complete team<br>for your property</h2>
+    <p class="section-sub">Not just a chatbot. A full AI team working at every stage of your property cycle — including tax compliance.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>24/7 Guest Agent</h3>
+        <p>Handles inquiries in natural language at any hour. Rates, directions, house rules, nearby activities — all without waking you at midnight.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Smart Maintenance</h3>
+        <p>Guests report issues directly to the agent. Work orders are created automatically and tracked until resolved. No emergency calls to you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Pre & Post Stay</h3>
+        <p>Arrival instructions, access codes and a welcome message sent automatically before each stay. After checkout: a farewell note and review invite. Right on time, every time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </div>
+        <h3>Social Media Marketing</h3>
+        <p>The agent generates scripts for TikTok and Instagram — seasonal highlights, landscapes, experiences. Ready-to-post content that drives direct bookings.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>Property Showcase</h3>
+        <p>Host Help automatically generates a dedicated website for your property with photos, description, rates and a booking button. Less dependence on Airbnb or Booking.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Identity & Regulatory Compliance</h3>
+        <p>Your agent has its own name and personality — the voice of your property, not a generic bot. The system also monitors tourism registry renewals and alerts you before they expire.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Electronic Invoicing & Tax Compliance</h3>
+        <p>Integrated with Alegra to automatically issue electronic invoices on every confirmed booking. Guest receives their invoice, you receive tax compliance — no extra effort.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Testimonial ── -->
+<section class="testimonial-section">
+  <div class="quote-mark">"</div>
+  <p class="testimonial-text">Captain DD handles guests when I can't. He knows exactly how to get to Sapzurro, the rates for every season and even the history of the cabin. It's like having a team member who never sleeps.</p>
+  <div class="testimonial-author">
+    <div class="author-avatar">C</div>
+    <div>
+      <div class="author-name">Dominguez Escobar Family</div>
+      <div class="author-role">Cabana Sancibrian · Sapzurro, Choco, Colombia</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── Pricing ── -->
+<div class="pricing-bg">
+  <section class="pricing-section" id="pricing">
+    <span class="section-tag">Pricing</span>
+    <h2>Simple and transparent</h2>
+    <p class="section-sub" style="margin-bottom:0">No surprises. No long-term contracts. Cancel anytime.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Basic</div>
+        <div class="pricing-price"><sup>$</sup>49<sub>/mo USD</sub></div>
+        <div class="pricing-desc">Perfect for hosts with one property who want to start automating.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-outline">Get started</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>1 property</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Agent with custom name and personality</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Editable knowledge base</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Custom URL (yourproperty.host-help.com)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>WhatsApp support</div>
+        </div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <div class="pricing-name">Professional</div>
+        <div class="pricing-price"><sup>$</sup>99<sub>/mo USD</sub></div>
+        <div class="pricing-desc">For hosts who want to maximize the guest experience and cut their management time.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Get started</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Everything in Basic</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Up to 3 properties</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Conversation dashboard</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Custom domain</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Monthly usage analytics</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Priority support</div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Agency</div>
+        <div class="pricing-price" style="font-size:1.9rem">Contact us</div>
+        <div class="pricing-desc">For property management companies with multiple hosts or large portfolios.</div>
+        <a href="mailto:hello@host-help.com" class="pricing-cta pricing-cta-outline">Talk to sales</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Unlimited properties</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Full white-label</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Integration with your existing system</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Guaranteed SLA</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dedicated account manager</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── CTA banner ── -->
+<section class="cta-banner">
+  <h2>Your property deserves<br><span class="accent">the best team</span></h2>
+  <p>Activate Host Help today. No credit card. No commitment.</p>
+  <a href="https://app.host-help.com/onboarding" class="btn-primary" style="font-size:1rem; padding:16px 36px;">Start now — it's free</a>
+  <p class="cta-sub-note">Setup in under 5 minutes</p>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../Branding/logo.png" alt="Host Help" />
+      <span class="footer-brand-name">Host-Help.com</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://app.host-help.com/onboarding">Get started</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:hello@host-help.com">Contact</a>
+      <a href="/">Español</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Host Help. All rights reserved.</span>
+    <span>Powered by DeHyl</span>
+  </div>
+</footer>
+
+</body>
+</html>

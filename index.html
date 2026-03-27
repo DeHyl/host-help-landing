@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Host Help — El equipo completo de IA para tu propiedad de rentas cortas</title>
+  <meta name="description" content="Host Help es el equipo completo de IA para propiedades de rentas cortas: huéspedes 24/7, mantenimiento, pre/post viaje, redes sociales, facturación electrónica DIAN, SIRE y TRA. Configuración en 5 minutos." />
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://host-help.com/" />
+  <meta property="og:title" content="Host Help — El equipo completo de IA para rentas cortas" />
+  <meta property="og:description" content="Atiende huéspedes, gestiona mantenimiento, envía comunicaciones, publica en redes y cumple con la DIAN, SIRE y TRA. Todo automático." />
+  <meta property="og:image" content="https://host-help.com/Branding/logo.png" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="Host Help" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Host Help — El equipo completo de IA para rentas cortas" />
+  <meta name="twitter:description" content="Atiende huéspedes, gestiona mantenimiento, envía comunicaciones, publica en redes y cumple con la DIAN, SIRE y TRA. Todo automático." />
+  <meta name="twitter:image" content="https://host-help.com/Branding/logo.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://host-help.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Branding/logo.png" />
+  <link rel="apple-touch-icon" href="Branding/logo.png" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Host Help",
+    "url": "https://host-help.com",
+    "logo": "https://host-help.com/Branding/logo.png",
+    "description": "El equipo completo de inteligencia artificial para propiedades de rentas cortas. 7 módulos: huéspedes 24/7, mantenimiento, pre/post viaje, marketing en redes, vitrina web, cumplimiento RNT y facturación electrónica DIAN.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Plan Básico",
+        "price": "49",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Plan Profesional",
+        "price": "99",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+      }
+    ],
+    "creator": {
+      "@type": "Organization",
+      "name": "DeHyl",
+      "url": "https://dehyl.ca"
+    },
+    "inLanguage": "es",
+    "availableOnDevice": "Desktop, Mobile",
+    "featureList": [
+      "Agente de huéspedes 24/7",
+      "Gestión de mantenimiento",
+      "Comunicaciones pre y post viaje",
+      "Marketing en redes sociales",
+      "Vitrina web de la propiedad",
+      "Cumplimiento RNT",
+      "Facturación electrónica DIAN, SIRE y TRA"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0F0F14;
+      --ink-2:     #1C1C26;
+      --ink-3:     #2A2A38;
+      --blue:      #3B82F6;
+      --blue-dark: #2563EB;
+      --blue-glow: rgba(59,130,246,0.15);
+      --gray-1:    #F8F9FA;
+      --gray-2:    #E9ECEF;
+      --gray-3:    #ADB5BD;
+      --gray-4:    #6C757D;
+      --white:     #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-2);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-logo-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-text span { color: var(--blue); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--ink);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .nav-cta:hover { background: var(--ink-2); transform: translateY(-1px); }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: 100px 24px 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(59,130,246,0.08) 0%, transparent 60%);
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.35);
+      color: #93C5FD;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: #3B82F6;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+    .hero h1 .accent { color: var(--blue); }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #94A3B8;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59,130,246,0.35);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+
+    /* ── Social proof strip ── */
+    .proof-strip {
+      background: var(--gray-1);
+      border-bottom: 1px solid var(--gray-2);
+      padding: 18px 24px;
+      text-align: center;
+    }
+    .proof-strip p {
+      font-size: 0.82rem;
+      color: var(--gray-4);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .proof-strip strong { color: var(--ink); }
+
+    /* ── Section base ── */
+    .section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gray-4);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    /* ── How it works ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 720px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card {
+      position: relative;
+      padding: 32px 28px;
+      border-radius: 16px;
+      border: 1px solid var(--gray-2);
+      background: var(--white);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .step-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .step-number {
+      width: 40px; height: 40px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .step-card h3 {
+      font-size: 1.05rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .step-card p { font-size: 0.875rem; color: var(--gray-4); line-height: 1.65; }
+    .step-connector {
+      position: absolute;
+      right: -13px; top: 52px;
+      width: 26px; height: 2px;
+      background: var(--gray-2);
+      z-index: 1;
+    }
+    @media (max-width: 720px) { .step-connector { display: none; } }
+
+    /* ── Features ── */
+    .features-bg { background: var(--ink); }
+    .features-section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      color: var(--white);
+    }
+    .features-section .section-tag { color: #60A5FA; }
+    .features-section h2 { color: var(--white); }
+    .features-section .section-sub { color: #94A3B8; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--ink-2);
+      border: 1px solid var(--ink-3);
+      border-radius: 16px;
+      padding: 28px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      border-color: rgba(59,130,246,0.4);
+      box-shadow: 0 0 0 1px rgba(59,130,246,0.15);
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-glow);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .feature-icon svg { width: 22px; height: 22px; stroke: #60A5FA; fill: none; stroke-width: 1.8; }
+    .feature-card h3 {
+      font-size: 0.95rem; font-weight: 700; color: var(--white);
+      margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .feature-card p { font-size: 0.83rem; color: #94A3B8; line-height: 1.65; }
+
+    /* ── Testimonial ── */
+    .testimonial-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+    .testimonial-text {
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+    .author-avatar {
+      width: 48px; height: 48px;
+      background: var(--ink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .author-name { font-size: 0.9rem; font-weight: 700; color: var(--ink); }
+    .author-role { font-size: 0.78rem; color: var(--gray-4); margin-top: 2px; }
+
+    /* ── Pricing ── */
+    .pricing-bg { background: var(--gray-1); border-top: 1px solid var(--gray-2); border-bottom: 1px solid var(--gray-2); }
+    .pricing-section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .pricing-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+    .pricing-card.featured {
+      border-color: var(--blue);
+      border-width: 2px;
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .pricing-name {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gray-4); margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-size: 2.4rem; font-weight: 900; color: var(--ink);
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .pricing-price sup { font-size: 1.1rem; vertical-align: top; margin-top: 6px; }
+    .pricing-price sub { font-size: 0.85rem; font-weight: 500; color: var(--gray-4); }
+    .pricing-desc { font-size: 0.83rem; color: var(--gray-4); margin: 12px 0 24px; line-height: 1.6; }
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .pricing-cta-primary { background: var(--blue); color: var(--white); border: none; }
+    .pricing-cta-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .pricing-cta-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--gray-2); }
+    .pricing-cta-outline:hover { background: var(--gray-1); }
+    .pricing-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .pricing-feat {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.83rem; color: var(--gray-4);
+    }
+    .check {
+      width: 18px; height: 18px; flex-shrink: 0;
+      background: var(--blue-glow);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .check svg { width: 10px; height: 10px; stroke: var(--blue); fill: none; stroke-width: 2.5; }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .cta-banner h2 .accent { color: var(--blue); }
+    .cta-banner p { color: #94A3B8; margin-bottom: 32px; font-size: 1rem; }
+    .cta-sub-note {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: #475569;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink-2);
+      border-top: 1px solid var(--ink-3);
+      padding: 40px 24px 28px;
+    }
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }
+    .footer-brand-name {
+      font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.7);
+    }
+    .footer-links {
+      display: flex; gap: 24px; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.8rem; color: #64748B; text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #94A3B8; }
+    .footer-bottom {
+      max-width: 1040px; margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--ink-3);
+      font-size: 0.75rem;
+      color: #334155;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── Chat demo widget (mock) ── */
+    .demo-widget {
+      display: inline-flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid var(--gray-2);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      width: 320px;
+      max-width: 100%;
+      margin: 48px auto 0;
+      text-align: left;
+    }
+    .demo-header {
+      background: var(--ink);
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .demo-avatar {
+      width: 36px; height: 36px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .demo-avatar img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+    .demo-name { font-size: 0.88rem; font-weight: 700; color: var(--white); }
+    .demo-status { font-size: 0.7rem; color: #60A5FA; margin-top: 1px; }
+    .demo-messages {
+      padding: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      background: #F8FAFC;
+    }
+    .demo-msg {
+      max-width: 85%;
+      border-radius: 14px;
+      padding: 10px 13px;
+      font-size: 0.83rem;
+      line-height: 1.55;
+    }
+    .demo-msg.bot {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--gray-2);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .demo-msg.user {
+      background: var(--blue);
+      color: var(--white);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .demo-footer {
+      border-top: 1px solid var(--gray-2);
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      background: var(--white);
+    }
+    .demo-input {
+      flex: 1;
+      font-size: 0.8rem; color: var(--gray-4);
+      font-family: inherit;
+    }
+    .demo-send {
+      width: 32px; height: 32px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .demo-send svg { width: 14px; height: 14px; stroke: white; fill: none; stroke-width: 2; }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--gray-2); }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="Branding/logo.png" alt="Host Help" />
+    <span class="nav-logo-text">Host<span>-Help</span>.com</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#funciones">Funciones</a></li>
+    <li><a href="#precios">Precios</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="/en/" style="font-size:0.8rem;font-weight:600;color:#6C757D;text-decoration:none;border:1px solid #E9ECEF;padding:5px 10px;border-radius:6px;">EN</a>
+    <a href="https://app.host-help.com/onboarding" class="nav-cta">Empezar gratis</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <img src="Branding/logo.png" alt="Host Help" style="height:135px;width:auto;margin:0 auto 28px;display:block;filter:brightness(0) invert(1);" />
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      7 modulos · El equipo completo
+    </div>
+    <h1>Tu equipo completo<br><span class="accent">de inteligencia artificial</span></h1>
+    <p>Host Help no es un chatbot — es el equipo completo para tu propiedad de rentas cortas. Atiende huespedes, gestiona mantenimiento, envia comunicaciones, publica en redes, emite facturas y cumple con la DIAN, SIRE y TRA. Todo automatico, todo en un solo lugar.</p>
+    <div class="hero-btns">
+      <a href="https://app.host-help.com/onboarding" class="btn-primary">Configurar mi propiedad</a>
+      <a href="#como-funciona" class="btn-ghost">Ver como funciona</a>
+    </div>
+    <div style="margin-top:16px;">
+      <a href="https://www.sancibrian.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:#60A5FA;font-size:0.85rem;font-weight:600;text-decoration:none;border:1px solid rgba(96,165,250,0.3);border-radius:999px;padding:7px 18px;transition:background 0.15s;" onmouseover="this.style.background='rgba(96,165,250,0.1)'" onmouseout="this.style.background='transparent'">
+        ✈️ Hablar con el Capitan DD
+      </a>
+    </div>
+
+    <!-- Demo chat widget -->
+    <div class="demo-widget">
+      <div class="demo-header">
+        <div class="demo-avatar">
+          <img src="Branding/logo.png" alt="" />
+        </div>
+        <div>
+          <div class="demo-name">Tu asistente</div>
+          <div class="demo-status">Online</div>
+        </div>
+      </div>
+      <div class="demo-messages">
+        <div class="demo-msg bot">Hola, bienvenido. Puedo ayudarte con tarifas, disponibilidad y todo lo que necesitas saber sobre la propiedad.</div>
+        <div class="demo-msg user">Cuantas personas caben?</div>
+        <div class="demo-msg bot">La propiedad tiene capacidad para hasta 8 huéspedes, 3 habitaciones y 2 banos. Quieres que te cuente las tarifas?</div>
+      </div>
+      <div class="demo-footer">
+        <span class="demo-input">Escribe tu pregunta...</span>
+        <div class="demo-send">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Proof strip ── -->
+<div class="proof-strip">
+  <p>Actualmente asistiendo a <strong>Cabana Sancibrian</strong> en Sapzurro, Choco &mdash; respondiendo huespedes desde el primer dia</p>
+</div>
+
+<!-- ── Como funciona ── -->
+<section class="section" id="como-funciona">
+  <span class="section-tag">Como funciona</span>
+  <h2>Listo en 5 minutos</h2>
+  <p class="section-sub">Sin tecnicismos. Solo describes tu propiedad y el equipo empieza a trabajar por ti.</p>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-connector"></div>
+      <div class="step-number">1</div>
+      <h3>Configura tu propiedad</h3>
+      <p>Ingresa los datos basicos: nombre, ubicacion, capacidad, horarios y tarifas. Todo el equipo aprende sobre tu propiedad desde el primer momento.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-connector"></div>
+      <div class="step-number">2</div>
+      <h3>Personaliza el agente</h3>
+      <p>Dale nombre y personalidad a tu agente principal. Puede tener el tono que mejor represente tu propiedad — formal, amigable, o regional.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <h3>Comparte el link</h3>
+      <p>Tu propiedad obtiene una URL propia. Ponla en Airbnb, WhatsApp, redes sociales — donde esten tus huespedes.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── Features ── -->
+<div class="features-bg">
+  <div class="features-section" id="funciones">
+    <span class="section-tag">Los 7 modulos</span>
+    <h2>El equipo completo<br>para tu propiedad</h2>
+    <p class="section-sub">No es solo un chatbot. Es un equipo de inteligencia artificial que trabaja en cada etapa del ciclo de tu propiedad — incluyendo cumplimiento fiscal.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Agente de Huespedes 24/7</h3>
+        <p>Atiende consultas en lenguaje natural a cualquier hora. Tarifas, como llegar, reglas, actividades cercanas — todo sin llamarte a medianoche.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Mantenimiento Inteligente</h3>
+        <p>Los huespedes reportan danos o problemas directamente al agente. Se crean ordenes de trabajo automaticamente y se hace seguimiento hasta cerrarlas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Pre-viaje y Post-viaje</h3>
+        <p>Instrucciones de llegada, codigo de acceso y bienvenida automatica antes de cada visita. Al salir: mensaje de despedida e invitacion a resenar. En el momento exacto, sin que tengas que recordarlo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </div>
+        <h3>Marketing en Redes Sociales</h3>
+        <p>El agente genera guiones para TikTok e Instagram de tu propiedad — temporadas especiales, paisajes, experiencias. Contenido listo para publicar que atrae reservas directas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>Vitrina Web de la Propiedad</h3>
+        <p>Host Help genera automaticamente una pagina propia para tu propiedad con fotos, descripcion, tarifas y boton de reserva. Sin depender solo de Airbnb o Booking.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Identidad y Cumplimiento RNT</h3>
+        <p>Tu agente tiene nombre y personalidad propia — es la voz de tu propiedad, no un chatbot generico. En Colombia, ademas monitorea la vigencia del RNT y te avisa antes de que venza.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Facturacion Electronica y Fiscal</h3>
+        <p>Integracion con Alegra para emitir facturas electronicas DIAN en cada reserva. Reportes SIRE y DigiTRA automaticos. El huesped recibe su factura, tu recibes cumplimiento tributario sin esfuerzo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Testimonial ── -->
+<section class="testimonial-section">
+  <div class="quote-mark">"</div>
+  <p class="testimonial-text">El Capitan DD atiende a los huespedes cuando yo no puedo. Sabe exactamente como llegar a Sapzurro, las tarifas de cada temporada y hasta la historia de la cabaña. Es como tener un empleado que nunca duerme.</p>
+  <div class="testimonial-author">
+    <div class="author-avatar">C</div>
+    <div>
+      <div class="author-name">Familia Dominguez Escobar</div>
+      <div class="author-role">Cabana Sancibrian · Sapzurro, Choco, Colombia</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── Pricing ── -->
+<div class="pricing-bg">
+  <section class="pricing-section" id="precios">
+    <span class="section-tag">Precios</span>
+    <h2>Simple y transparente</h2>
+    <p class="section-sub" style="margin-bottom:0">Sin sorpresas. Sin contrato de permanencia. Cancela cuando quieras.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Basico</div>
+        <div class="pricing-price"><sup>$</sup>49<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Ideal para anfitriones con una propiedad que quieren empezar a automatizar.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-outline">Empezar</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>1 propiedad</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Asistente con nombre y personalidad propia</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Base de conocimiento editable</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>URL propia (tupropiedad.host-help.com)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Soporte por WhatsApp</div>
+        </div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Mas popular</div>
+        <div class="pricing-name">Profesional</div>
+        <div class="pricing-price"><sup>$</sup>99<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Para anfitriones que quieren maximizar la experiencia del huesped y reducir su tiempo de gestion.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Empezar</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo lo del plan Basico</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Hasta 3 propiedades</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dashboard de conversaciones</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dominio personalizado</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Estadisticas de uso mensual</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Soporte prioritario</div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Agencia</div>
+        <div class="pricing-price" style="font-size:1.9rem">Contáctanos</div>
+        <div class="pricing-desc">Para administradoras de propiedades con multiples anfitriones o portfolios grandes.</div>
+        <a href="mailto:hola@host-help.com" class="pricing-cta pricing-cta-outline">Hablar con ventas</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Propiedades ilimitadas</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>White-label completo</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Integracion con tu sistema</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>SLA garantizado</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Gerente de cuenta dedicado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── CTA banner ── -->
+<section class="cta-banner">
+  <h2>Tu propiedad merece<br><span class="accent">el mejor equipo</span></h2>
+  <p>Activa Host Help hoy. Sin tarjeta de credito. Sin compromisos.</p>
+  <a href="https://app.host-help.com/onboarding" class="btn-primary" style="font-size:1rem; padding:16px 36px;">Empezar ahora — es gratis</a>
+  <p class="cta-sub-note">Configuracion en menos de 5 minutos</p>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="Branding/logo.png" alt="Host Help" />
+      <span class="footer-brand-name">Host-Help.com</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://app.host-help.com/onboarding">Empezar</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="mailto:hola@host-help.com">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 Host Help. Todos los derechos reservados.</span>
+    <span>Powered by DeHyl</span>
+  </div>
+</footer>
+
+</body>
+</html>

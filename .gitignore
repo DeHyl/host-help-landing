@@ -1,0 +1,8 @@
+# Obsidian vault config
+.obsidian/
+
+# Local notes / planning docs
+Plan Maestro Host-Help.ai
+
+# Wrangler local state
+.wrangler/
