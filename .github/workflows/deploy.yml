@@ -10,6 +10,16 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v4
+
+      - name: Prepare static assets
+        run: |
+          mkdir -p dist
+          cp index.html dist/
+          cp robots.txt dist/
+          cp sitemap.xml dist/
+          cp -r en dist/
+          cp -r Branding dist/
+
       - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
