@@ -6,4 +6,3 @@ account_id = "8a1192ae4abba98088c67310ad571190"
 [assets]
 directory = "./dist"
 binding = "ASSETS"
-not_found_handling = "single-page-application"
