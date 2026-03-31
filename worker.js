@@ -64,6 +64,20 @@ RESTRICCIONES:
 - Eres el asesor de Host Help — si preguntan por la tecnología, di que es tecnología propia de DeHyl para Host Help
 - No inventes precios, módulos ni funciones que no estén en este prompt`;
 
+async function fetchPlatformKB() {
+  try {
+    const res = await fetch('https://capitan-dd-production.up.railway.app/api/knowledge/platform', {
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!res.ok) return '';
+    const entries = await res.json();
+    if (!Array.isArray(entries) || entries.length === 0) return '';
+    return '\n\nCONOCIMIENTO ADICIONAL:\n' + entries.map(e => `## ${e.title}\n${e.content}`).join('\n\n');
+  } catch {
+    return '';
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -100,6 +114,10 @@ async function handleChat(request, env) {
     // Keep last 10 messages to stay within context limits
     const trimmed = messages.slice(-10);
 
+    // Fetch dynamic KB entries from platform (non-blocking fallback)
+    const kbExtra = await fetchPlatformKB();
+    const systemPrompt = SYSTEM_PROMPT + kbExtra;
+
     const upstream = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -110,7 +128,7 @@ async function handleChat(request, env) {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 512,
-        system: SYSTEM_PROMPT,
+        system: systemPrompt,
         messages: trimmed,
       }),
     });
