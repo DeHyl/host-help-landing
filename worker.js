@@ -103,9 +103,22 @@ export default {
   },
 };
 
+async function saveSession(sessionId, messages, escalated) {
+  try {
+    await fetch('https://capitan-dd-production.up.railway.app/api/platform-sessions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId, messages, escalated }),
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch {
+    // fire-and-forget, never fail the chat response
+  }
+}
+
 async function handleChat(request, env) {
   try {
-    const { messages } = await request.json();
+    const { messages, sessionId } = await request.json();
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return jsonResponse({ error: 'messages required' }, 400);
@@ -143,6 +156,12 @@ async function handleChat(request, env) {
     const raw = data.content?.[0]?.text ?? '';
     const escalate = raw.includes('[ESCALAR_WA]');
     const response = raw.replace('[ESCALAR_WA]', '').trim();
+
+    // Persist full conversation (including new assistant turn) — fire and forget
+    if (sessionId) {
+      const fullMessages = [...trimmed, { role: 'assistant', content: response }];
+      saveSession(sessionId, fullMessages, escalate);
+    }
 
     return jsonResponse({ response, escalate });
   } catch (err) {

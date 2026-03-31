@@ -2012,6 +2012,7 @@
 
   var messages = [];
   var exchangeCount = 0;
+  var sessionId = (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36));
   var isOpen = false;
   var isTyping = false;
 
@@ -2048,7 +2049,7 @@
     fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: messages })
+      body: JSON.stringify({ messages: messages, sessionId: sessionId })
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
