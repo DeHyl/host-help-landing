@@ -2116,10 +2116,10 @@
     isTyping = true;
     document.getElementById('hhSendBtn').disabled = true;
 
-    fetch('/api/chat', {
+    fetch('https://capitan-dd-production.up.railway.app/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: messages, sessionId: sessionId })
+      body: JSON.stringify({ message: text, sessionId: sessionId })
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -2127,12 +2127,13 @@
       isTyping = false;
       document.getElementById('hhSendBtn').disabled = false;
 
-      var reply = data.response || 'Ocurrió un error. Intenta de nuevo.';
+      sessionId = data.sessionId || sessionId;
+      var reply = data.reply || 'Ocurrio un error. Intenta de nuevo.';
       addBotMsg(reply);
       messages.push({ role: 'assistant', content: reply });
       exchangeCount++;
 
-      if (data.escalate || exchangeCount >= 3) {
+      if (exchangeCount >= 3) {
         showWA(text);
       }
     })
