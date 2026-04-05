@@ -1962,6 +1962,17 @@
   .hh-send:hover { background: #40916c; transform: scale(1.06); }
   .hh-send:disabled { opacity: 0.5; cursor: default; }
   .hh-send svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; }
+  .hh-mic {
+    width: 36px; height: 36px;
+    background: #f8f9fa; border: 1px solid #e9ecef;
+    border-radius: 50%; cursor: pointer;
+    display: none; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    font-size: 1rem; line-height: 1;
+  }
+  .hh-mic:hover { background: #e9ecef; transform: scale(1.06); }
+  .hh-mic.listening { background: #ef4444; border-color: #ef4444; animation: hhMicPulse 1.5s infinite; }
+  @keyframes hhMicPulse { 0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.4)} 50%{box-shadow:0 0 0 8px rgba(239,68,68,0)} }
 </style>
 
 <!-- Toggle button -->
@@ -2000,6 +2011,7 @@
     <input class="hh-input" id="hhInput" type="text"
            placeholder="Escribe tu pregunta..."
            onkeydown="if(event.key==='Enter')hhSend()" />
+    <button class="hh-mic" id="hhMic" onclick="hhMicToggle()" aria-label="Hablar" title="Hablar">🎙️</button>
     <button class="hh-send" id="hhSendBtn" onclick="hhSend()">
       <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
@@ -2015,6 +2027,63 @@
   var sessionId = (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36));
   var isOpen = false;
   var isTyping = false;
+  var hhRecognition = null;
+  var hhListening = false;
+
+  // Show mic button if browser supports Speech Recognition
+  var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SpeechRec) {
+    document.getElementById('hhMic').style.display = 'flex';
+  }
+
+  window.hhMicToggle = function() {
+    if (!SpeechRec) return;
+    var mic = document.getElementById('hhMic');
+    var input = document.getElementById('hhInput');
+
+    if (hhListening) {
+      if (hhRecognition) hhRecognition.stop();
+      hhListening = false;
+      mic.classList.remove('listening');
+      mic.title = 'Hablar';
+      input.placeholder = 'Escribe tu pregunta...';
+      input.style.borderColor = '';
+      return;
+    }
+
+    var recognition = new SpeechRec();
+    recognition.lang = 'es-CO';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    hhRecognition = recognition;
+
+    recognition.onstart = function() {
+      hhListening = true;
+      mic.classList.add('listening');
+      mic.title = 'Detener';
+      input.placeholder = 'Escuchando...';
+      input.style.borderColor = '#ef4444';
+    };
+    recognition.onend = function() {
+      hhListening = false;
+      mic.classList.remove('listening');
+      mic.title = 'Hablar';
+      input.placeholder = 'Escribe tu pregunta...';
+      input.style.borderColor = '';
+    };
+    recognition.onerror = function() {
+      hhListening = false;
+      mic.classList.remove('listening');
+      input.placeholder = 'Escribe tu pregunta...';
+      input.style.borderColor = '';
+    };
+    recognition.onresult = function(e) {
+      var transcript = e.results[0][0].transcript;
+      input.value = input.value ? input.value + ' ' + transcript : transcript;
+      input.focus();
+    };
+    recognition.start();
+  };
 
   window.hhToggle = function() {
     isOpen = !isOpen;
