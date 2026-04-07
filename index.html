@@ -187,7 +187,46 @@
       transition: background 0.15s, transform 0.1s;
     }
     .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    /* ── Hamburger button ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: 0.3s; border-radius: 2px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-right-desktop { display: none; }
+    }
+
+    /* ── Mobile menu overlay ── */
+    .mobile-menu {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,15,20,0.96);
+      display: none; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+      z-index: 1000;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a {
+      color: var(--white); font-size: 1.25rem; font-weight: 500;
+      text-decoration: none; transition: color 0.15s;
+    }
+    .mobile-menu a:hover { color: var(--green-light); }
+    .mobile-menu .mobile-cta {
+      background: var(--green); color: var(--white);
+      font-family: inherit; font-size: 1rem; font-weight: 600;
+      padding: 14px 32px; border-radius: 8px; text-decoration: none;
+      margin-top: 8px; transition: background 0.15s;
+    }
+    .mobile-menu .mobile-cta:hover { background: var(--green-mid); }
+    .mobile-menu .mobile-lang {
+      font-size: 0.85rem; font-weight: 600; color: var(--gray-3);
+      border: 1px solid var(--gray-3); padding: 6px 14px; border-radius: 6px;
+    }
+    .mobile-menu .mobile-lang:hover { color: var(--white); border-color: var(--white); }
+    .mobile-menu-close {
+      position: absolute; top: 18px; right: 22px;
+      background: none; border: none; color: var(--white);
+      font-size: 2.2rem; cursor: pointer; line-height: 1;
+    }
 
     /* ── Hero ── */
     .hero {
@@ -1253,11 +1292,26 @@
     <li><a href="#como-funciona">Cómo Funciona</a></li>
     <li><a href="#precios">Precios</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:12px;">
+  <div class="nav-right-desktop" style="display:flex;align-items:center;gap:12px;">
     <a href="/en/" style="font-size:0.8rem;font-weight:600;color:#6C757D;text-decoration:none;border:1px solid #E9ECEF;padding:5px 10px;border-radius:6px;">EN</a>
     <a href="https://app.host-help.com/onboarding" class="nav-cta">Activa tu equipo</a>
   </div>
+  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ── Mobile Menu Overlay ── -->
+<div id="mobile-menu" class="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Cerrar menu">&times;</button>
+  <a href="#dolores" onclick="toggleMobileMenu()">Los Dolores</a>
+  <a href="#equipo" onclick="toggleMobileMenu()">El Equipo</a>
+  <a href="#capitan" onclick="toggleMobileMenu()">El Capitan DD</a>
+  <a href="#como-funciona" onclick="toggleMobileMenu()">Como Funciona</a>
+  <a href="#precios" onclick="toggleMobileMenu()">Precios</a>
+  <a href="/en/" class="mobile-lang" onclick="toggleMobileMenu()">EN</a>
+  <a href="https://app.host-help.com/onboarding" class="mobile-cta">Activa tu equipo</a>
+</div>
 
 <!-- ── Hero ── -->
 <section class="hero">
@@ -2227,6 +2281,15 @@
     cta.style.display = 'block';
   }
 })();
+</script>
+
+<!-- ── Mobile Menu Toggle ── -->
+<script>
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('active');
+  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+}
 </script>
 
 </body>
