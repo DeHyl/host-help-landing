@@ -1348,8 +1348,8 @@
       <div class="dolor-card reveal">
         <span class="dolor-icon">📵</span>
         <h3>Nula presencia digital propia</h3>
-        <p>Fotos viejas en Airbnb, sin web, sin redes actualizadas, sin marca. Cuando el huésped busca tu propiedad, no te encuentra.</p>
-        <div class="dolor-resolve">Vitrina web + contenido para redes generado por IA</div>
+        <p>Fotos viejas en Airbnb, sin web, sin redes actualizadas, sin marca. Cuando el huesped busca tu propiedad, no te encuentra. Y no tienes ni el tiempo ni el equipo para hacer marketing como los hoteles grandes.</p>
+        <div class="dolor-resolve">Tu propia mini agencia de marketing: videos, redes, publicidad paga, analisis y estrategia — todo automatizado</div>
       </div>
       <div class="dolor-card reveal reveal-delay-1">
         <span class="dolor-icon">📋</span>
@@ -1398,8 +1398,8 @@
       </div>
       <div class="agent-card reveal">
         <div class="agent-icon">📱</div>
-        <h3>Marketing Digital</h3>
-        <p>Genera scripts para TikTok e Instagram adaptados a tu propiedad. Crea tu pagina web optimizada para SEO con fotos, tarifas y boton de reserva directa. Integracion con Buffer para programar publicaciones.</p>
+        <h3>Mini Agencia de Marketing</h3>
+        <p>Una agencia de marketing completa dentro de tu dashboard. Crea los videos, los publica en TikTok e Instagram, responde comentarios y mensajes en redes, gestiona tu presupuesto de publicidad en Meta y Google, analiza que funciona y que no, y te propone estrategias para llenar tu calendario de reservas. Lo que un hotel de cadena logra con un equipo de 5 personas — tu lo tienes con un agente.</p>
       </div>
       <div class="agent-card reveal reveal-delay-1">
         <div class="agent-icon">👥</div>
@@ -1518,6 +1518,7 @@
           <li>Tareas se crean con cada check-in y checkout</li>
           <li>Pre-viaje y post-viaje automaticos</li>
           <li>Evaluacion de desempeno del equipo con IA</li>
+          <li>Videos, publicaciones, respuestas en redes y anuncios pagados</li>
         </ul>
       </div>
       <div class="loop-col reveal reveal-delay-1">
@@ -1712,6 +1713,7 @@
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Coaching IA para staff con hitos y bonos editables</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>QR codes para acceso directo de staff y huespedes</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pre-orden de desayunos para toda la estadia</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Mini agencia de marketing: videos, redes, anuncios pagados, analisis y estrategia</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cumplimiento DIAN/SIRE/TRA</div>
         </div>
       </div>
@@ -1976,6 +1978,11 @@
     background: #f8f9fa;
     color: #0F0F14;
     transition: border-color 0.15s;
+    resize: none;
+    min-height: 38px;
+    max-height: 120px;
+    line-height: 1.4;
+    overflow-y: auto;
   }
   .hh-input:focus { border-color: #2d6a4f; background: #fff; }
   .hh-send {
@@ -2038,9 +2045,11 @@
 
   <div class="hh-input-row">
     <button class="hh-mic" id="hhMic" onclick="hhMicToggle()" aria-label="Hablar" title="Hablar">🎙️</button>
-    <input class="hh-input" id="hhInput" type="text"
+    <textarea class="hh-input" id="hhInput" rows="1"
            placeholder="Escribe tu pregunta..."
-           onkeydown="if(event.key==='Enter')hhSend()" />
+           onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();hhSend()}"
+           oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"
+           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     <button class="hh-send" id="hhSendBtn" onclick="hhSend()">
       <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
