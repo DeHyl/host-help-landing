@@ -453,10 +453,13 @@
       transform: translateY(-2px);
     }
     .dolor-icon {
-      font-size: 1.6rem;
+      width: 40px; height: 40px;
       margin-bottom: 12px;
-      display: block;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45,106,79,0.12);
+      border-radius: 10px;
     }
+    .dolor-icon svg { width: 22px; height: 22px; stroke: #74c69d; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .dolor-card h3 {
       font-size: 0.98rem;
       font-weight: 700;
@@ -590,6 +593,8 @@
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 14px;
       font-size: 1.3rem;
+    }
+    .agent-icon svg { width: 24px; height: 24px; stroke: #74c69d; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
     }
     .agent-card h3 {
       font-size: 0.96rem;
@@ -1322,37 +1327,37 @@
 
     <div class="dolor-grid">
       <div class="dolor-card reveal">
-        <span class="dolor-icon">😩</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
         <h3>Sin equipo de atención</h3>
         <p>Tú respondes WhatsApp, Booking y Airbnb a medianoche, los domingos, en vacaciones. No hay descanso porque la operación no para.</p>
         <div class="dolor-resolve">Host Help atiende huéspedes 24/7 por ti</div>
       </div>
       <div class="dolor-card reveal reveal-delay-1">
-        <span class="dolor-icon">💸</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <h3>Dependencia de OTAs</h3>
         <p>Airbnb y Booking cobran hasta 20% de comisión. No tienes los datos de tus huéspedes. No tienes canal propio para vender directo.</p>
         <div class="dolor-resolve">Vitrina web propia + canal directo sin comisión</div>
       </div>
       <div class="dolor-card reveal">
-        <span class="dolor-icon">⚠️</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
         <h3>Cumplimiento fiscal invisible</h3>
         <p>RNT, TRA, DIAN, SIRE — se vencen sin avisar. Una inspección o una multa pueden cerrar tu propiedad de un día para otro.</p>
         <div class="dolor-resolve">SIRE, TRA y RNT gestionados automáticamente — de la alerta a la presentación</div>
       </div>
       <div class="dolor-card reveal reveal-delay-1">
-        <span class="dolor-icon">🔧</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         <h3>Mantenimiento reactivo</h3>
         <p>Los daños los reportan por WhatsApp, los olvidarás, no hay historial. El mantenimiento siempre es una emergencia, nunca planificado.</p>
         <div class="dolor-resolve">Tablero operativo: limpieza, alistamiento, reparaciones — asignadas, fechadas y con seguimiento</div>
       </div>
       <div class="dolor-card reveal">
-        <span class="dolor-icon">📵</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91"/><line x1="1" y1="1" x2="23" y2="23"/></svg></span>
         <h3>Nula presencia digital propia</h3>
         <p>Fotos viejas en Airbnb, sin web, sin redes actualizadas, sin marca. Cuando el huesped busca tu propiedad, no te encuentra. Y no tienes ni el tiempo ni el equipo para hacer marketing como los hoteles grandes.</p>
         <div class="dolor-resolve">Tu propia mini agencia de marketing: videos, redes, publicidad paga, analisis y estrategia — todo automatizado</div>
       </div>
       <div class="dolor-card reveal reveal-delay-1">
-        <span class="dolor-icon">📋</span>
+        <span class="dolor-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span>
         <h3>Pre/post-viaje manual</h3>
         <p>Tienes que recordar enviar instrucciones de llegada, código de acceso, invitación a reseñar. Si lo olvidas, el huésped llega desorientado.</p>
         <div class="dolor-resolve">Journey completo: preguntas previas → itinerario IA → instrucciones → estado de cuenta</div>
@@ -1370,7 +1375,7 @@
 
     <!-- Dashboard card -->
     <div class="dashboard-card reveal">
-      <div class="dashboard-icon">🖥️</div>
+      <div class="dashboard-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#74c69d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <div>
         <h3>Dashboard de Operaciones</h3>
         <p>Tu torre de control. Recepcion, Journey del Huesped, Cafe con catalogo de productos, Mantenimiento con tareas automaticas, Coaching del staff con bonos, QR codes, Metricas. Todo en una sola pantalla.</p>
@@ -1382,37 +1387,37 @@
     <div class="agents-grid">
       <div class="agent-card highlighted reveal">
         <div class="agent-highlight-badge">Destacado</div>
-        <div class="agent-icon">⚓</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M21 3v6h-6"/></svg></div>
         <h3>Agente Concierge 24/7</h3>
         <p>Atiende huespedes por chat o QR sin necesitar pagina web. Crea reservas automaticamente, reconoce a tu familia y socios aplicando descuentos, toma pedidos del cafe con precios reales de tu catalogo, y presenta el estado de cuenta al checkout. Los huespedes pueden preordenar desayunos para toda su estadia. Habla espanol, ingles y frances.</p>
       </div>
       <div class="agent-card reveal reveal-delay-1">
-        <div class="agent-icon">🔧</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
         <h3>Operaciones y Staff</h3>
         <p>Las tareas de limpieza, inspeccion y alistamiento se crean solas con cada check-in, estadia y checkout. Tu equipo las ve desde el celular con un PIN, sube fotos de evidencia y marca como completadas. Alarma sonora cuando llega un pedido. Evaluacion de desempeno con IA y bonos por hitos logrados. Sin WhatsApp, sin computador.</p>
       </div>
       <div class="agent-card reveal reveal-delay-2">
-        <div class="agent-icon">✉️</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3>Journey del Huesped</h3>
         <p>Pre-viaje automatico 7 dias antes del check-in con preguntas de intereses. Itinerario personalizado generado por IA. Post-viaje al dia siguiente del checkout con invitacion a resena. Todo el journey en una sola pestana: Pre-Viaje, Itinerarios, Post-Viaje, WhatsApp. En espanol, ingles o frances.</p>
       </div>
       <div class="agent-card reveal">
-        <div class="agent-icon">📱</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Mini Agencia de Marketing</h3>
         <p>Una agencia de marketing completa dentro de tu dashboard. Crea los videos, los publica en TikTok e Instagram, responde comentarios y mensajes en redes, gestiona tu presupuesto de publicidad en Meta y Google, analiza que funciona y que no, y te propone estrategias para llenar tu calendario de reservas. Lo que un hotel de cadena logra con un equipo de 5 personas — tu lo tienes con un agente.</p>
       </div>
       <div class="agent-card reveal reveal-delay-1">
-        <div class="agent-icon">👥</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Gestion de Equipo</h3>
         <p>Administra tu equipo con roles diferenciados. Cada miembro accede a sus tareas y pedidos desde el celular con un PIN de 4 digitos. Evaluacion de desempeno automatica con coaching de IA y bonos por metas cumplidas. Registra grupos autorizados con descuentos que el agente aplica automaticamente.</p>
       </div>
       <div class="agent-card reveal reveal-delay-2">
-        <div class="agent-icon">⚖️</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Cumplimiento Legal</h3>
         <p>Gestion automatizada de SIRE (alerta y seguimiento por cada huesped extranjero ante Migracion Colombia), TRA por huesped via digiTRA, y RNT con alertas escalonadas 60/30/15/7/1 dias antes del vencimiento.</p>
       </div>
       <div class="agent-card reveal">
-        <div class="agent-icon">🧠</div>
+        <div class="agent-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
         <h3>Cafe y Productos</h3>
         <p>Catalogo editable de productos con precios y adiciones (cafe, desayuno, snacks, bebidas). El agente lo consulta en tiempo real para tomar pedidos con precios exactos. Los pedidos llegan automaticamente al staff sin que nadie tenga que llamar o escribir. Cambias un precio en el dashboard y el agente lo usa al instante.</p>
       </div>
@@ -1460,7 +1465,7 @@
       </ul>
       <div class="captain-cta-wrap reveal">
         <a href="https://www.sancibrian.com" target="_blank" rel="noopener" class="btn-captain">
-          ⚓ Probar el Capitán DD en vivo →
+          Probar el Capitan DD en vivo
         </a>
         <p class="captain-note">
           <span class="live-dot"></span>
@@ -1473,7 +1478,7 @@
     <div class="reveal">
       <div class="demo-widget">
         <div class="demo-header">
-          <div class="demo-avatar">⚓</div>
+          <div class="demo-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg></div>
           <div class="demo-header-info">
             <div class="demo-name">Capitán DD · Cabaña Sancibrian</div>
             <div class="demo-status">En línea ahora</div>
@@ -1510,7 +1515,7 @@
 
     <div class="loop-grid">
       <div class="loop-col reveal">
-        <span class="loop-col-icon">⚙️</span>
+        <span class="loop-col-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
         <h3>Operan solos en lo rutinario</h3>
         <ul>
           <li>Consultas de huespedes 24/7 por chat o QR</li>
@@ -1522,7 +1527,7 @@
         </ul>
       </div>
       <div class="loop-col reveal reveal-delay-1">
-        <span class="loop-col-icon">🔔</span>
+        <span class="loop-col-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
         <h3>Te avisan en lo que importa</h3>
         <ul>
           <li>Incidentes o situaciones inusuales</li>
@@ -1533,7 +1538,7 @@
         </ul>
       </div>
       <div class="loop-col reveal reveal-delay-2">
-        <span class="loop-col-icon">📊</span>
+        <span class="loop-col-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
         <h3>Tu dashboard = tu control total</h3>
         <ul>
           <li>Fotos de evidencia de cada tarea completada</li>
