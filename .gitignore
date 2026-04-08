@@ -6,3 +6,4 @@ Plan Maestro Host-Help.ai
 
 # Wrangler local state
 .wrangler/
+dist/
