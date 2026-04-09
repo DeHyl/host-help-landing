@@ -40,20 +40,10 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "offers": [
-      {
-        "@type": "Offer",
-        "name": "Plan Básico",
-        "price": "49",
-        "priceCurrency": "USD",
-        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
-      },
-      {
-        "@type": "Offer",
-        "name": "Plan Profesional",
-        "price": "99",
-        "priceCurrency": "USD",
-        "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
-      }
+      { "@type": "Offer", "name": "Starter", "price": "99", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "Growth", "price": "179", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "Pro", "price": "299", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "Supreme", "price": "449", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } }
     ],
     "creator": {
       "@type": "Organization",
@@ -1728,65 +1718,90 @@
     <p class="section-sub reveal" style="margin-bottom:0;">Sin sorpresas. Sin contrato de permanencia. Cancela cuando quieras.</p>
 
     <div class="pricing-grid">
+      <!-- Starter -->
       <div class="pricing-card reveal">
-        <div class="pricing-name">Plan Básico</div>
-        <div class="pricing-price"><sup>$</sup>49<sub>/mes USD</sub></div>
-        <div class="pricing-desc">Para propietarios que quieren su primer agente operando hoy.</div>
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price"><sup>$</sup>99<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Tu propiedad, siempre abierta. Chatbot IA + reservas + pagina web.</div>
         <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-outline">Empezar</a>
         <div class="pricing-features">
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>1 propiedad</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Capitán DD con nombre propio</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Chatbot IA 24/7 (web + WhatsApp)</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Base de conocimiento editable</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>URL propia de la propiedad</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Agente de huéspedes 24/7</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Soporte por WhatsApp</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Reservas + calendario</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Huespedes + tarifas</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cumplimiento RNT/SIRE</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pagina web generada</div>
         </div>
       </div>
-      <div class="pricing-card featured reveal reveal-delay-1">
-        <div class="pricing-badge">Más popular</div>
-        <div class="pricing-name">Plan Profesional</div>
-        <div class="pricing-price"><sup>$</sup>99<sub>/mes USD</sub></div>
-        <div class="pricing-desc">El equipo completo para propietarios que quieren operar diferente.</div>
-        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Activar equipo completo</a>
+      <!-- Growth -->
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-price"><sup>$</sup>179<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Experiencia de huesped premium. Pre-viaje, itinerarios, facturacion.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-outline">Activar Growth</a>
         <div class="pricing-features">
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Hasta 3 propiedades</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dashboard de operaciones completo</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pre/post-viaje automático</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Gestión de mantenimiento</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Alertas al dueño en tiempo real</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Soporte prioritario</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo Starter incluido</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pre-viaje + itinerarios IA</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Post-viaje + reviews</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>iCal Sync (Airbnb/Booking)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cafe/productos + pedidos</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Dominio propio</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>3 temporadas (alta/media/baja)</div>
         </div>
       </div>
+      <!-- Pro -->
       <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-badge">Mejor valor</div>
-        <div class="pricing-name">Plan Pro Max</div>
-        <div class="pricing-price"><sup>$</sup>149<sup style="font-size:0.7rem">.99</sup><sub>/mes USD</sub></div>
-        <div class="pricing-desc">Operacion autonoma completa. Tu equipo humano rinde mas con IA que los evalua y motiva.</div>
-        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Activar Pro Max</a>
+        <div class="pricing-badge">Mas popular</div>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price"><sup>$</sup>299<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Tu equipo, organizado. Marketing + operaciones + staff con IA.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Activar Pro</a>
         <div class="pricing-features">
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Hasta 5 propiedades</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo el Plan Profesional incluido</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Tareas automaticas por reserva (check-in, estadia, checkout)</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>App movil para staff con PIN y fotos de evidencia</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Catalogo de productos del cafe con pedidos automaticos</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Coaching IA para staff con hitos y bonos editables</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>QR codes para acceso directo de staff y huespedes</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Pre-orden de desayunos para toda la estadia</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Mini agencia de marketing: videos, redes, anuncios pagados, analisis y estrategia</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo Growth incluido</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Marketing: contenido IA + hashtags + calendario</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Actualidad del sector</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Mantenimiento + tareas automaticas</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Equipo con PIN + metricas + logros</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Proveedores + ordenes de compra</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cumplimiento DIAN/SIRE/TRA</div>
         </div>
       </div>
     </div>
-    <div class="pricing-grid" style="max-width:420px;margin:32px auto 0;">
-      <div class="pricing-card reveal">
-        <div class="pricing-name">Plan Agencia</div>
-        <div class="pricing-price" style="font-size:1.85rem;letter-spacing:-0.02em;">Contáctanos</div>
-        <div class="pricing-desc">Para administradoras con múltiples propiedades o portfolios grandes.</div>
+    <div class="pricing-grid" style="margin:32px auto 0;">
+      <!-- Supreme -->
+      <div class="pricing-card featured reveal">
+        <div class="pricing-badge">Mejor valor</div>
+        <div class="pricing-name">Supreme</div>
+        <div class="pricing-price"><sup>$</sup>449<sub>/mes USD</sub></div>
+        <div class="pricing-desc">Tu propia agencia de marketing completa. Inteligencia de mercado, videos, estrategia trimestral.</div>
+        <a href="https://app.host-help.com/onboarding" class="pricing-cta pricing-cta-primary">Activar Supreme</a>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Hasta 10 propiedades</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo Pro incluido</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Inteligencia de Mercado (10 secciones)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Ranking con competidores reales (OTA)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Generador de videos (3 formatos)</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Hashtags validados con Google Trends</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>KPIs + PAR + graficos de tendencia</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Estrategia trimestral con plan de accion</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Reviews automaticos por categorias</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Posicionamiento + diferenciadores</div>
+        </div>
+      </div>
+      <!-- Enterprise -->
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price" style="font-size:1.85rem;letter-spacing:-0.02em;">Contactanos</div>
+        <div class="pricing-desc">Para administradoras con multiples propiedades o portfolios grandes.</div>
         <a href="mailto:hola@host-help.com" class="pricing-cta pricing-cta-outline">Hablar con ventas</a>
         <div class="pricing-features">
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Propiedades ilimitadas</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Todo Supreme incluido</div>
+          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Revenue Manager (pricing dinamico)</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>White-label completo</div>
-          <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Cumplimiento DIAN/SIRE/TRA</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>SLA garantizado</div>
           <div class="pricing-feat"><div class="check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>Gerente de cuenta dedicado</div>
         </div>
