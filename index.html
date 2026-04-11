@@ -266,8 +266,8 @@
        HERO — Dark background, Cloudbeds style
        ============================ */
     .hero {
-      padding: 100px 24px 80px;
-      text-align: center;
+      padding: 80px 48px 80px;
+      text-align: left;
       background: #0B1D26;
       overflow: hidden;
       position: relative;
@@ -282,9 +282,29 @@
       pointer-events: none;
     }
     .hero-inner {
-      max-width: 1100px;
+      max-width: 1440px;
       margin: 0 auto;
       position: relative;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hero-left {}
+    .hero-right {
+      padding-top: 80px;
+    }
+    .hero-right p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      transition: opacity 0.3s ease;
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+      .hero-right { padding-top: 0; }
     }
     .hero-badge {
       display: inline-flex;
@@ -294,12 +314,12 @@
       border: 1px solid rgba(8,145,178,0.3);
       color: var(--primary-hover);
       border-radius: 999px;
-      padding: 8px 20px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      padding: 6px 16px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .hero-badge-dot {
       width: 8px; height: 8px;
@@ -355,22 +375,24 @@
     }
     .hero h1 {
       font-family: 'Host Grotesk', 'Inter', system-ui, sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
       color: #FFFFFF;
       margin-bottom: 20px;
     }
     .hero .highlight-mark {
       background: rgba(8,145,178,0.3);
       color: #06B6D4;
-      padding: 2px 10px;
-      border-radius: 6px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: rgba(255,255,255,0.6);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--muted);
       line-height: 1.75;
       max-width: 800px;
       margin: 0 auto 40px;
@@ -1179,57 +1201,48 @@
 <!-- ======================== HERO ======================== -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge reveal">
-      <div class="hero-badge-dot"></div>
-      Plataforma de Hospitalidad con IA
-    </div>
-    <div class="hero-carousel reveal reveal-d1" id="heroCarousel">
-      <div class="hero-slide active">
-        <h1>¿Quien atiende a tus huespedes a las <span class="highlight-mark">3 de la mañana</span>?</h1>
-        <p class="hero-subtitle">Mientras duermes, tus competidores responden en 8 segundos. Host Help es el equipo de operaciones con IA que atiende, coordina y vende -- para que tu propiedad nunca este sola.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Compraste una propiedad, no un <span class="highlight-mark">segundo trabajo</span></h1>
-        <p class="hero-subtitle">Pero ahi estas: respondiendo mensajes a medianoche, coordinando limpieza por WhatsApp, rogando por reseñas. Host Help se encarga de todo con 7 agentes de IA que operan tu propiedad como el mejor hotel de la zona.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Tu propiedad genera ingresos <span class="highlight-mark">24 horas</span>. Tu solo puedes trabajar 16.</h1>
-        <p class="hero-subtitle">Las 8 horas que duermes son las mas caras de tu negocio. Host Help elimina ese vacio con un equipo de IA que atiende, vende y opera sin pausas, sin vacaciones, sin excusas.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Imagina despertar y que <span class="highlight-mark">todo ya este resuelto</span></h1>
-        <p class="hero-subtitle">Los huespedes respondidos. Las tareas asignadas. Los pedidos procesados. Las reservas entrando. Host Help es el equipo que trabaja mientras descansas -- y te presenta los resultados cada mañana.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>El 68% de los huespedes reservan con quien <span class="highlight-mark">responde primero</span></h1>
-        <p class="hero-subtitle">Host Help responde en 8 segundos, en 5 idiomas, a cualquier hora. No es una ventaja -- es la diferencia entre llenar tu calendario o ver como lo llena tu competencia.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Tu propiedad necesita un <span class="highlight-mark">equipo completo</span>. Tu presupuesto dice que no.</h1>
-        <p class="hero-subtitle">Cada mensaje sin responder es una reserva perdida. Cada tarea sin supervisar es un huesped insatisfecho. Host Help te da 7 agentes de IA que trabajan como un equipo real -- 24/7, desde $0.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Los mejores hoteles tienen equipos de <span class="highlight-mark">20 personas</span>. Tu propiedad merece lo mismo.</h1>
-        <p class="hero-subtitle">Host Help te da 7 agentes especializados que trabajan juntos: atienden huespedes, coordinan mantenimiento, generan contenido y cumplen regulaciones. Todo desde un solo dashboard.</p>
-      </div>
-      <div class="hero-slide">
-        <h1><span class="highlight-mark">8 segundos</span>. Ese es el tiempo que tu propiedad tarda en responder.</h1>
-        <p class="hero-subtitle">Mientras otros propietarios revisan WhatsApp entre reuniones, tu IA ya respondio, cotizo y esta cerrando la reserva. Un equipo completo de operaciones que nunca para.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Tu equipo de operaciones <span class="highlight-mark">ya existe</span>. Solo que aun no lo conoces.</h1>
-        <p class="hero-subtitle">7 agentes de IA que atienden huespedes, gestionan tareas, procesan pedidos, generan contenido y cumplen con la DIAN. 24 horas. 365 dias. Desde cero pesos.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Cada noche sin responder te cuesta mas que <span class="highlight-mark">un empleado</span></h1>
-        <p class="hero-subtitle">Las reservas no esperan. Los huespedes no repiten. Las reseñas no perdonan. Host Help pone un equipo completo de IA detras de tu propiedad -- respondiendo, coordinando y vendiendo mientras tu decides que hacer con tu tiempo.</p>
-      </div>
-      <div class="hero-slide">
-        <h1>Mira tu propiedad funcionar <span class="highlight-mark">desde tu celular</span> mientras vives tu vida</h1>
-        <p class="hero-subtitle">En una cena con amigos, haciendo trekking, en clase de spinning o viendo una pelicula con tu familia. Abres el dashboard desde tu celular y ves tus ingresos subir sin tener que hacer nada. Todo opera sin ti -- huespedes atendidos, tareas completadas, reservas entrando. Sonries y sigues con lo tuyo.</p>
-      </div>
-    </div>
-    <div class="hero-dots reveal reveal-d2">
+    <div class="hero-layout">
+      <div class="hero-left">
+        <div class="hero-badge reveal">
+          <div class="hero-badge-dot"></div>
+          Plataforma de Hospitalidad con IA
+        </div>
+        <div class="hero-carousel reveal reveal-d1" id="heroCarousel">
+          <div class="hero-slide active" data-desc="Mientras duermes, tus competidores responden en 8 segundos. Host Help es el equipo de operaciones con IA que atiende, coordina y vende -- para que tu propiedad nunca este sola.">
+            <h1>¿Quien atiende a tus huespedes a las <span class="highlight-mark">3 de la mañana</span>?</h1>
+          </div>
+          <div class="hero-slide" data-desc="Pero ahi estas: respondiendo mensajes a medianoche, coordinando limpieza por WhatsApp, rogando por reseñas. Host Help se encarga de todo con 7 agentes de IA que operan tu propiedad como el mejor hotel de la zona.">
+            <h1>Compraste una propiedad, no un <span class="highlight-mark">segundo trabajo</span></h1>
+          </div>
+          <div class="hero-slide" data-desc="Las 8 horas que duermes son las mas caras de tu negocio. Host Help elimina ese vacio con un equipo de IA que atiende, vende y opera sin pausas, sin vacaciones, sin excusas.">
+            <h1>Tu propiedad genera ingresos <span class="highlight-mark">24 horas</span>. Tu solo puedes trabajar 16.</h1>
+          </div>
+          <div class="hero-slide" data-desc="Los huespedes respondidos. Las tareas asignadas. Los pedidos procesados. Las reservas entrando. Host Help es el equipo que trabaja mientras descansas -- y te presenta los resultados cada mañana.">
+            <h1>Imagina despertar y que <span class="highlight-mark">todo ya este resuelto</span></h1>
+          </div>
+          <div class="hero-slide" data-desc="Host Help responde en 8 segundos, en 5 idiomas, a cualquier hora. No es una ventaja -- es la diferencia entre llenar tu calendario o ver como lo llena tu competencia.">
+            <h1>El 68% de los huespedes reservan con quien <span class="highlight-mark">responde primero</span></h1>
+          </div>
+          <div class="hero-slide" data-desc="Cada mensaje sin responder es una reserva perdida. Cada tarea sin supervisar es un huesped insatisfecho. Host Help te da 7 agentes de IA que trabajan como un equipo real -- 24/7, desde $0.">
+            <h1>Tu propiedad necesita un <span class="highlight-mark">equipo completo</span>. Tu presupuesto dice que no.</h1>
+          </div>
+          <div class="hero-slide" data-desc="Host Help te da 7 agentes especializados que trabajan juntos: atienden huespedes, coordinan mantenimiento, generan contenido y cumplen regulaciones. Todo desde un solo dashboard.">
+            <h1>Los mejores hoteles tienen equipos de <span class="highlight-mark">20 personas</span>. Tu propiedad merece lo mismo.</h1>
+          </div>
+          <div class="hero-slide" data-desc="Mientras otros propietarios revisan WhatsApp entre reuniones, tu IA ya respondio, cotizo y esta cerrando la reserva. Un equipo completo de operaciones que nunca para.">
+            <h1><span class="highlight-mark">8 segundos</span>. Ese es el tiempo que tu propiedad tarda en responder.</h1>
+          </div>
+          <div class="hero-slide" data-desc="7 agentes de IA que atienden huespedes, gestionan tareas, procesan pedidos, generan contenido y cumplen con la DIAN. 24 horas. 365 dias. Desde cero pesos.">
+            <h1>Tu equipo de operaciones <span class="highlight-mark">ya existe</span>. Solo que aun no lo conoces.</h1>
+          </div>
+          <div class="hero-slide" data-desc="Las reservas no esperan. Los huespedes no repiten. Las reseñas no perdonan. Host Help pone un equipo completo de IA detras de tu propiedad -- respondiendo, coordinando y vendiendo mientras tu decides que hacer con tu tiempo.">
+            <h1>Cada noche sin responder te cuesta mas que <span class="highlight-mark">un empleado</span></h1>
+          </div>
+          <div class="hero-slide" data-desc="En una cena con amigos, haciendo trekking, en clase de spinning o viendo una pelicula con tu familia. Abres el dashboard desde tu celular y ves tus ingresos subir sin tener que hacer nada. Todo opera sin ti -- huespedes atendidos, tareas completadas, reservas entrando. Sonries y sigues con lo tuyo.">
+            <h1>Mira tu propiedad funcionar <span class="highlight-mark">desde tu celular</span> mientras vives tu vida</h1>
+          </div>
+        </div>
+        <div class="hero-dots reveal reveal-d2" style="justify-content:flex-start">
       <span class="hero-dot active" onclick="goToSlide(0)"></span>
       <span class="hero-dot" onclick="goToSlide(1)"></span>
       <span class="hero-dot" onclick="goToSlide(2)"></span>
@@ -1245,6 +1258,11 @@
     <div class="hero-btns reveal reveal-d3">
       <a href="https://app.host-help.com/onboarding" class="btn-coral">Activa tu propiedad</a>
       <a href="#equipo" class="btn-outline">Ver el dashboard</a>
+    </div>
+      </div>
+      <div class="hero-right reveal reveal-d2">
+        <p id="heroDesc">Mientras duermes, tus competidores responden en 8 segundos. Host Help es el equipo de operaciones con IA que atiende, coordina y vende -- para que tu propiedad nunca este sola.</p>
+      </div>
     </div>
   </div>
 
@@ -1754,6 +1772,15 @@
     currentSlide = n;
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
+    // Sync right-side description
+    var descEl = document.getElementById('heroDesc');
+    if (descEl && slides[currentSlide].dataset.desc) {
+      descEl.style.opacity = '0';
+      setTimeout(function() {
+        descEl.textContent = slides[currentSlide].dataset.desc;
+        descEl.style.opacity = '1';
+      }, 300);
+    }
     resetCarouselTimer();
   }
 
