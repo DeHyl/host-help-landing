@@ -312,14 +312,55 @@
       0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
       50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(16,185,129,0); }
     }
+    .hero-carousel {
+      position: relative;
+      min-height: 200px;
+    }
+    .hero-slide {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      position: relative;
+      pointer-events: auto;
+    }
+    .hero-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero-dot.active {
+      background: #06B6D4;
+      transform: scale(1.3);
+    }
+    .hero-dot:hover {
+      background: rgba(255,255,255,0.5);
+    }
     .hero h1 {
       font-family: 'Host Grotesk', 'Inter', system-ui, sans-serif;
-      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 400;
       letter-spacing: -0.02em;
-      line-height: 1.15;
+      line-height: 1.2;
       color: #FFFFFF;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .hero .highlight-mark {
       background: rgba(8,145,178,0.3);
@@ -1142,8 +1183,35 @@
       <div class="hero-badge-dot"></div>
       Plataforma de Hospitalidad con IA
     </div>
-    <h1 class="reveal reveal-d1">Tu copiloto de <span class="highlight-mark">operaciones</span></h1>
-    <p class="hero-subtitle reveal reveal-d2">Host Help no es un chatbot -- es tu equipo completo. Atiende huespedes, gestiona mantenimiento, y nunca para. Tu miras el dashboard y decides.</p>
+    <div class="hero-carousel reveal reveal-d1" id="heroCarousel">
+      <div class="hero-slide active">
+        <h1>¿Quien atiende a tus huespedes a las <span class="highlight-mark">3 de la mañana</span>?</h1>
+        <p class="hero-subtitle">Mientras duermes, tus competidores responden en 8 segundos. Host Help es el equipo de operaciones con IA que atiende, coordina y vende -- para que tu propiedad nunca este sola.</p>
+      </div>
+      <div class="hero-slide">
+        <h1>Compraste una propiedad, no un <span class="highlight-mark">segundo trabajo</span></h1>
+        <p class="hero-subtitle">Pero ahi estas: respondiendo mensajes a medianoche, coordinando limpieza por WhatsApp, rogando por reseñas. Host Help se encarga de todo con 7 agentes de IA que operan tu propiedad como el mejor hotel de la zona.</p>
+      </div>
+      <div class="hero-slide">
+        <h1>Tu propiedad genera ingresos <span class="highlight-mark">24 horas</span>. Tu solo puedes trabajar 16.</h1>
+        <p class="hero-subtitle">Las 8 horas que duermes son las mas caras de tu negocio. Host Help elimina ese vacio con un equipo de IA que atiende, vende y opera sin pausas, sin vacaciones, sin excusas.</p>
+      </div>
+      <div class="hero-slide">
+        <h1>Imagina despertar y que <span class="highlight-mark">todo ya este resuelto</span></h1>
+        <p class="hero-subtitle">Los huespedes respondidos. Las tareas asignadas. Los pedidos procesados. Las reservas entrando. Host Help es el equipo que trabaja mientras descansas -- y te presenta los resultados cada mañana.</p>
+      </div>
+      <div class="hero-slide">
+        <h1>El 68% de los huespedes reservan con quien <span class="highlight-mark">responde primero</span></h1>
+        <p class="hero-subtitle">Host Help responde en 8 segundos, en 4 idiomas, a cualquier hora. No es una ventaja -- es la diferencia entre llenar tu calendario o ver como lo llena tu competencia.</p>
+      </div>
+    </div>
+    <div class="hero-dots reveal reveal-d2">
+      <span class="hero-dot active" onclick="goToSlide(0)"></span>
+      <span class="hero-dot" onclick="goToSlide(1)"></span>
+      <span class="hero-dot" onclick="goToSlide(2)"></span>
+      <span class="hero-dot" onclick="goToSlide(3)"></span>
+      <span class="hero-dot" onclick="goToSlide(4)"></span>
+    </div>
     <div class="hero-btns reveal reveal-d3">
       <a href="https://app.host-help.com/onboarding" class="btn-coral">Activa tu propiedad</a>
       <a href="#equipo" class="btn-outline">Ver el dashboard</a>
@@ -1642,6 +1710,33 @@
       observer.observe(el);
     });
   })();
+
+  // Hero headline carousel
+  var currentSlide = 0;
+  var totalSlides = 5;
+  var carouselTimer;
+
+  function goToSlide(n) {
+    var slides = document.querySelectorAll('.hero-slide');
+    var dots = document.querySelectorAll('.hero-dot');
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    resetCarouselTimer();
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % totalSlides);
+  }
+
+  function resetCarouselTimer() {
+    clearInterval(carouselTimer);
+    carouselTimer = setInterval(nextSlide, 10000);
+  }
+
+  resetCarouselTimer();
 </script>
 
 <!-- ======================== CHAT WIDGET ======================== -->
