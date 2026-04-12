@@ -140,25 +140,19 @@
     body.dark-mode .tech-logo { color: #64748B; }
     body.dark-mode .feature-visual { background: transparent !important; }
 
-    /* Theme toggle button */
+    /* Theme toggle button -- inside nav-right */
     .theme-toggle {
-      position: fixed;
-      top: 18px;
-      right: 120px;
-      z-index: 101;
       background: none;
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 6px 10px;
+      padding: 4px 8px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--gray-3);
       transition: all 0.2s;
+      line-height: 1;
     }
     .theme-toggle:hover { border-color: var(--primary); }
-    @media (max-width: 900px) {
-      .theme-toggle { right: 70px; top: 16px; }
-    }
 
     html { scroll-behavior: smooth; }
 
@@ -227,7 +221,8 @@
       text-decoration: none;
       flex-shrink: 0;
     }
-    .nav-logo img { height: 34px; width: auto; }
+    .nav-logo img, .nav-logo-img { height: 36px; width: 36px; object-fit: contain; }
+    body.dark-mode .nav-logo-img { filter: invert(1) brightness(1.5); }
     .nav-logo-text {
       font-size: 1.05rem;
       font-weight: 700;
@@ -1298,7 +1293,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <div style="width:34px;height:34px;border-radius:8px;background:#0891B2;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#fff;flex-shrink:0">H</div>
+      <img src="Branding/logo.png" alt="Host Help" class="nav-logo-img" />
       <span class="nav-logo-text">Host<span>-Help</span></span>
     </a>
     <ul class="nav-center">
@@ -1308,6 +1303,7 @@
       <li><a href="#precios">Precios</a></li>
     </ul>
     <div class="nav-right">
+      <button class="theme-toggle" id="landingThemeToggle" onclick="toggleLandingTheme()">&#x1F319;</button>
       <a href="/en/" class="nav-lang">EN</a>
       <a href="https://app.host-help.com/onboarding" class="nav-cta">Activa tu propiedad</a>
     </div>
@@ -1316,8 +1312,6 @@
     </button>
   </div>
 </nav>
-
-<button class="theme-toggle" id="landingThemeToggle" onclick="toggleLandingTheme()">&#x1F319;</button>
 
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="mobile-menu">
