@@ -642,10 +642,14 @@
       display: flex;
       align-items: center;
       gap: 48px;
-      animation: techScroll 25s linear infinite;
+      animation: techScroll 20s linear infinite;
       width: max-content;
+      padding: 16px 0;
     }
     .tech-scroll:hover { animation-play-state: paused; }
+    @media (max-width: 600px) {
+      .tech-scroll { gap: 32px; animation-duration: 15s; }
+    }
     @keyframes techScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
