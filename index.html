@@ -77,9 +77,9 @@
       --surface-dim: #f0f3f5;
       --line:        #dfe5ea;
       --line-strong: #c9d3dc;
-      --text:        #111827;
-      --muted:       #5c6b7a;
-      --muted-2:     #8a97a4;
+      --text:        #0a0f1a;
+      --muted:       #374151;
+      --muted-2:     #5c6b7a;
       --accent:      #111827;
       --green:       #0D9488;       /* Caribe teal kept as secondary accent */
       --green-deep:  #0F766E;
@@ -379,6 +379,20 @@
       letter-spacing: -0.05em;
       max-width: 620px;
       color: var(--text);
+      -webkit-text-stroke: 0.5px rgba(17, 24, 39, 0.55);
+      text-stroke: 0.5px rgba(17, 24, 39, 0.55);
+      paint-order: stroke fill;
+      text-shadow: 0 0 1px rgba(17, 24, 39, 0.18);
+    }
+    body.dark-mode .hero-slide h1 {
+      -webkit-text-stroke: 0;
+      text-stroke: 0;
+      text-shadow: none;
+    }
+    .hero-slide h1 .highlight-mark {
+      -webkit-text-stroke: 0;
+      text-stroke: 0;
+      text-shadow: none;
     }
 
     .hero-dots { display: flex; gap: 8px; margin-bottom: 28px; }
@@ -929,8 +943,8 @@
     }
     .pricing-tier {
       font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
+      font-weight: 800;
+      color: var(--text);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-bottom: 12px;
@@ -975,9 +989,10 @@
     .pricing-cta-ghost {
       background: #fff;
       color: var(--text);
-      border: 1.5px solid var(--line-strong);
+      border: 1.5px solid var(--text);
+      font-weight: 800;
     }
-    .pricing-cta-ghost:hover { border-color: #aab5be; }
+    .pricing-cta-ghost:hover { background: var(--text); color: #fff; }
     .pricing-features {
       display: flex;
       flex-direction: column;
@@ -988,7 +1003,8 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
+      font-weight: 500;
       color: var(--text);
       line-height: 1.5;
     }
