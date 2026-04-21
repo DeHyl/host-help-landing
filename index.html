@@ -113,6 +113,46 @@
     body.dark-mode .btn-dark { background: var(--green); color: #fff; }
     body.dark-mode .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--line-strong); }
 
+    /* Dark-mode: white cards stay white, but their interior text must read dark */
+    body.dark-mode .loop-card,
+    body.dark-mode .origin-quote,
+    body.dark-mode .origin-stat,
+    body.dark-mode .pricing-card {
+      background: #fff;
+      color: #0a0f1a;
+      border-color: #dfe5ea;
+    }
+    body.dark-mode .loop-card h3,
+    body.dark-mode .origin-quote p,
+    body.dark-mode .pricing-tier,
+    body.dark-mode .pricing-price {
+      color: #0a0f1a;
+    }
+    body.dark-mode .loop-card ul li,
+    body.dark-mode .origin-quote cite,
+    body.dark-mode .origin-stat-label,
+    body.dark-mode .pricing-desc {
+      color: #5c6b7a;
+    }
+    body.dark-mode .loop-card-icon {
+      background: #f0f3f5;
+      border-color: #dfe5ea;
+      color: #0a0f1a;
+    }
+    body.dark-mode .pricing-cta-coral {
+      background: #111827;
+      color: #fff;
+    }
+    body.dark-mode .pricing-cta-coral:hover { opacity: 0.88; }
+
+    /* Dark-mode: origin section keeps the warm light-card feel even on the dark page */
+    body.dark-mode .origin-section { background: #0e1620; }
+    body.dark-mode .origin-text p { color: #cbd5e1; }
+    body.dark-mode .origin-text p strong { color: #f4f7f8; }
+
+    /* Dark-mode: final CTA banner — accent flips light, force a dark slate panel */
+    body.dark-mode .final-cta-inner { background: #111827; color: #fff; }
+
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--bg);
