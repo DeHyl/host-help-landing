@@ -330,6 +330,9 @@
       position: relative;
       overflow: hidden;
     }
+    body.dark-mode .hero {
+      background: linear-gradient(180deg, #0f1820 0%, var(--bg) 100%);
+    }
     .hero::before {
       content: '';
       position: absolute;
@@ -385,9 +388,10 @@
       text-shadow: 0 0 1px rgba(17, 24, 39, 0.18);
     }
     body.dark-mode .hero-slide h1 {
-      -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.45);
-      text-stroke: 0.5px rgba(0, 0, 0, 0.45);
-      text-shadow: 0 0 1px rgba(0, 0, 0, 0.28);
+      color: #94a3b8;
+      -webkit-text-stroke: 0.5px rgba(148, 163, 184, 0.45);
+      text-stroke: 0.5px rgba(148, 163, 184, 0.45);
+      text-shadow: none;
     }
     .hero-slide h1 .highlight-mark {
       -webkit-text-stroke: 0;
