@@ -2277,16 +2277,20 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: text, sessionId: sessionId })
     })
-    .then(function(r) { return r.json(); })
+    .then(function(r) {
+      if (!r.ok) throw new Error('server-' + r.status);
+      return r.json();
+    })
     .then(function(data) {
       typingEl.remove();
       isTyping = false;
       document.getElementById('hhSendBtn').disabled = false;
 
+      if (!data.reply) throw new Error('no-reply');
+
       sessionId = data.sessionId || sessionId;
-      var reply = data.reply || 'Ocurrio un error. Intenta de nuevo.';
-      addBotMsg(reply);
-      messages.push({ role: 'assistant', content: reply });
+      addBotMsg(data.reply);
+      messages.push({ role: 'assistant', content: data.reply });
       exchangeCount++;
 
       if (exchangeCount >= 3) { showWA(text); }
@@ -2295,7 +2299,8 @@
       typingEl.remove();
       isTyping = false;
       document.getElementById('hhSendBtn').disabled = false;
-      addBotMsg('Hubo un problema de conexion. Intenta de nuevo en un momento.');
+      addBotMsg('El chat esta teniendo problemas ahora mismo. Mientras lo resolvemos, escribeme por WhatsApp y te respondo personalmente.');
+      showWA(text);
     });
   };
 
