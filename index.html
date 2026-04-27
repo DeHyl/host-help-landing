@@ -256,7 +256,8 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
       overflow: hidden;
     }
-    .brand-icon img { width: 22px; height: 22px; object-fit: contain; }
+    .brand-icon img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0); }
+    body.dark-mode .brand-icon img { filter: brightness(0) invert(1); }
     .brand-name { font-size: 16px; font-weight: 800; letter-spacing: -0.03em; }
     .brand-sub  { font-size: 11px; font-weight: 600; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1px; }
 
@@ -1159,7 +1160,8 @@
       gap: 11px;
       margin-bottom: 14px;
     }
-    .footer-brand-top img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0) invert(1); }
+    .footer-brand-top img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0); }
+    body.dark-mode .footer-brand-top img { filter: brightness(0) invert(1); }
     .footer-brand-name { font-size: 16px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
     .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 320px; }
     .footer-col-title {
