@@ -6,3 +6,8 @@ Plan Maestro Host-Help.ai
 
 # Wrangler local state
 .wrangler/
+
+# Local backups and dev artifacts
+*.backup-*.html
+screenshots/
+
