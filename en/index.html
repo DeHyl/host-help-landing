@@ -101,10 +101,10 @@
       --surface-dim: #161e26;
       --line:        #243038;
       --line-strong: #2f3d47;
-      --text:        #e7edf2;
-      --muted:       #9aa6b1;
-      --muted-2:     #6c7986;
-      --accent:      #e7edf2;
+      --text:        #cbd5e1;
+      --muted:       #94a3b8;
+      --muted-2:     #64748b;
+      --accent:      #cbd5e1;
       --shadow-sm:   0 2px 8px rgba(0,0,0,0.5);
       --shadow-md:   0 8px 32px rgba(0,0,0,0.55);
       --shadow-lg:   0 20px 60px rgba(0,0,0,0.6);
@@ -256,7 +256,8 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
       overflow: hidden;
     }
-    .brand-icon img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
+    .brand-icon img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0); }
+    body.dark-mode .brand-icon img { filter: brightness(0) invert(1); }
     .brand-name { font-size: 16px; font-weight: 800; letter-spacing: -0.03em; }
     .brand-sub  { font-size: 11px; font-weight: 600; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1px; }
 
@@ -1159,7 +1160,8 @@
       gap: 11px;
       margin-bottom: 14px;
     }
-    .footer-brand-top img { width: 28px; height: 28px; object-fit: contain; }
+    .footer-brand-top img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0); }
+    body.dark-mode .footer-brand-top img { filter: brightness(0) invert(1); }
     .footer-brand-name { font-size: 16px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
     .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 320px; }
     .footer-col-title {
@@ -1595,7 +1597,7 @@
         </ul>
       </div>
       <div class="feature-visual">
-        <img src="../screenshots/marketing-estrategia.png" alt="Marketing Intelligence, quarterly strategy with action plan and KPIs" loading="lazy">
+        <img src="../screenshots/Marketing intelligence.png" alt="Marketing Intelligence: competitive analysis, property ranking, strengths and improvement areas with key insight" loading="lazy">
       </div>
     </div>
 
@@ -1614,7 +1616,7 @@
         </ul>
       </div>
       <div class="feature-visual">
-        <img src="../screenshots/calendario.png" alt="Booking calendar with iCal sync from Airbnb and Booking" loading="lazy">
+        <img src="../screenshots/Pedidos-Catálogo .png" alt="Cafe products catalog with daily orders, balance, payment methods and breakdown by customer type" loading="lazy">
       </div>
     </div>
 
@@ -1635,7 +1637,7 @@
       </div>
       <div class="feature-visual">
         <!-- TODO: replace with dedicated inventario.png screenshot when ready -->
-        <img src="../screenshots/operaciones.png" alt="Inventory and automatic purchasing panel with stock alerts by supplier" loading="lazy">
+        <img src="../screenshots/overview.png" alt="Host Help dashboard: overview with bookings, occupancy, revenue, ratings and Capitan DD copilot" loading="lazy">
       </div>
     </div>
   </div>
