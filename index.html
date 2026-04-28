@@ -320,15 +320,19 @@
       padding: 32px;
     }
     .mobile-menu.active { display: flex; }
-    .mobile-menu a { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
-    .mobile-menu .mobile-cta { background: var(--accent); color: #fff; padding: 12px 26px; border-radius: 999px; }
+    .mobile-menu a { font-size: 20px; font-weight: 700; color: #0a0f1a; letter-spacing: -0.02em; }
+    .mobile-menu .mobile-cta { background: #0d9488; color: #fff; padding: 12px 26px; border-radius: 999px; }
     .mobile-menu-close {
       position: absolute;
       top: 18px; right: 18px;
       background: none; border: none;
       font-size: 28px; cursor: pointer;
-      color: var(--muted);
+      color: #374151;
     }
+    /* Mobile menu always renders with light-mode look — override dark vars */
+    body.dark-mode .mobile-menu { background: rgba(244,247,248,0.98); }
+    body.dark-mode .mobile-menu a { color: #0a0f1a; }
+    body.dark-mode .mobile-menu-close { color: #374151; }
 
     /* ── Sections (light page bg, no dark/white alternation) ── */
     .section { padding: 88px 0; }
